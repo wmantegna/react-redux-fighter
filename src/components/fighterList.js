@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Fighter } from './fighter';
 
@@ -10,6 +10,7 @@ export class FighterList extends React.Component {
 
     this.nodes = props.fighters.map((fighter) => {
       return <Fighter 
+        id={fighter.id}
         name={fighter.name}
         attack={fighter.attack}
         defense={fighter.defense} 
