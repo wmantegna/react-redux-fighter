@@ -22,19 +22,27 @@ class App extends Component {
     for (var i in names){
       let attack = Math.ceil(Math.random() * 10);
       let defense = Math.ceil(Math.random() * 10);
-      let obj = {id: i, name: names[i], attack: attack, defense: defense};
+      let obj = {id: (parseInt(i, 10) + 10), name: names[i], attack: attack, defense: defense};
       this.fighters.push(obj);
     }
+
+    // bind event handler
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect(fighter) {
-    // alert('handleSelect: ' + fighter);
+  handleSelect(id) {
+    // base case for '' value, meaning no option was selected
+    if (isNaN(id)){
+      return;
+    }
+
+    id = parseInt(id, 10);
+    let fighter = this.fighters.find((item) => item.id === id);
+
     this.setState({selectedFighter: fighter});
-    alert('state.selectedFighter='+this.state.selectedFighter);
   }
   
-  selectedFighter() {
-    let fighter = this.state.selectedFighter;
+  generateFighterComponent(fighter) {
     let obj = null;
 
     if (fighter){
@@ -50,16 +58,18 @@ class App extends Component {
   }
 
   render() {
+    let fighter = this.state.selectedFighter;
+    let fighterHtml = this.generateFighterComponent(fighter);
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to React -- {this.state.sayHi}</h1>
         </header>
-        <h1>{this.state.sayHi}</h1>
         {/* <FighterList fighters={this.fighters} /> */}
         <FighterForm fighters={this.fighters} onSelect={this.handleSelect} />
-        {this.selectedFighter()}
+        {fighterHtml}
         
       </div>
     );

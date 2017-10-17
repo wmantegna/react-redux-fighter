@@ -1,31 +1,29 @@
 import React from 'react';
 
-import { Fighter } from './fighter';
-
 export class FighterForm extends React.Component {
   nodes;
 
   constructor(props) {
     super(props);
     this.state = { 
-      selectedFighter: {}
+      selectedId: ''
     };
 
+    // bind event handlers
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+    // generate <option> html
     this.options = props.fighters.map((fighter) => {
-      return <option value={fighter.id}>{fighter.name}</option>;
+      return <option key={fighter.id} value={fighter.id.toString()}>{fighter.name}</option>;
     });
-
   }
 
   handleChange(event) {
-    this.setState({selectedFighter: event.target.value});
+    this.setState({selectedId: event.target.value});
   }
   handleSubmit(event) {
-    alert('Selected Fighter: ' + this.state.selectedFighter);
-    this.props.onSelect(this.state.selectedFighter);
+    this.props.onSelect(this.state.selectedId);
 
     event.preventDefault();
   }
@@ -35,7 +33,8 @@ export class FighterForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Pick your Fighter:
-          <select value={this.state.selectedFighter} onChange={this.handleChange}>
+          <select value={this.state.selectedId} onChange={this.handleChange}>
+            <option>--</option>
             {this.options}
           </select>
         </label>
