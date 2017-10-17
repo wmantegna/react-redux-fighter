@@ -12,22 +12,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sayHi: 'hello world',
       selectedFighter: null
     };
 
-    // generate fighter data
-    this.fighters = [];
-    let names = ['Bob', 'Joe', 'Jane', 'Jenny'];
-    for (var i in names){
-      let attack = Math.ceil(Math.random() * 10);
-      let defense = Math.ceil(Math.random() * 10);
-      let obj = {id: (parseInt(i, 10) + 10), name: names[i], attack: attack, defense: defense};
-      this.fighters.push(obj);
-    }
+    this.generateFighters();
 
     // bind event handler
     this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  generateFighters() {
+      this.fighters = [];
+
+      let names = ['Bob', 'Joe', 'Jane', 'Jenny'];
+      for (var i in names) {
+          let attack = Math.ceil(Math.random() * 10);
+          let defense = Math.ceil(Math.random() * 10);
+          let obj = { id: (parseInt(i, 10) + 10), name: names[i], attack: attack, defense: defense };
+          this.fighters.push(obj);
+      }
   }
 
   handleSelect(id) {
@@ -65,7 +68,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React -- {this.state.sayHi}</h1>
+          <h1 className="App-title">Welcome to React</h1>
         </header>
         {/* <FighterList fighters={this.fighters} /> */}
         <FighterForm fighters={this.fighters} onSelect={this.handleSelect} />

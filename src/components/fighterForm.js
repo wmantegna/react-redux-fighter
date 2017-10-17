@@ -13,10 +13,13 @@ export class FighterForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    // generate <option> html
-    this.options = props.fighters.map((fighter) => {
-      return <option key={fighter.id} value={fighter.id.toString()}>{fighter.name}</option>;
-    });
+    this.generateOptions(props);
+  }
+
+  generateOptions(props) {
+      this.options = props.fighters.map((fighter) => {
+          return <option key={fighter.id} value={fighter.id.toString()}>{fighter.name}</option>;
+      });
   }
 
   handleChange(event) {

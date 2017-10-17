@@ -1,3 +1,18 @@
+## To-Do
+
+- Generate an array of Fighter Objects
+- Display list of fighters
+- Create form for a user to choose their fighter
+- extract fighters into a "service"
+
+
+## Articles (in order or reading)
+- [ReactJS Docs](https://reactjs.org/docs/installation.html)
+- [Redux Docs](http://redux.js.org/docs/basics/)
+- [Blog Post with Great explanation of how Redux works](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
