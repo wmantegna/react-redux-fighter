@@ -1,9 +1,9 @@
 import React from 'react';
 import EditStat from './EditStat';
 
-let EditFighter = ({ id, name, health, attack, defense, skillPoints }) => (
+let EditMyFighter = ({ id, name, health, attack, defense, skillPoints }) => (
   <div>
-    <h3>{id} - {name}</h3>
+    <h3>Pick Your Stats!</h3>
     <EditStat stat="health" value={health} />
     <EditStat stat="attack" value={attack} />
     <EditStat stat="defense" value={defense} />
@@ -11,4 +11,4 @@ let EditFighter = ({ id, name, health, attack, defense, skillPoints }) => (
   </div>
 )
 
-export default EditFighter
+export default EditMyFighter

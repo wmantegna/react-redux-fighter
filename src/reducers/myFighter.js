@@ -2,7 +2,7 @@ const defaultState = {
   attack: 0,
   defense: 0,
   health: 10,
-  skillPoints: 10
+  skillPoints: 2
 };
 
 const myFighter = (state = defaultState, action) => {

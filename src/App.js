@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import './App.css'
 
-import Fighter from './components/Fighter';
-import EditFighter from './components/EditFighter';
+import EditMyFighter from './components/EditMyFighter';
+import Game from './components/Game';
 
 const mapStateToProps = state => {
   return {
@@ -15,16 +15,17 @@ const mapStateToProps = state => {
 let App = ({ myFighter }) => {
   let fighter;
   if (myFighter.skillPoints > 0){
-    fighter = <EditFighter {...myFighter} />;
+    fighter = <EditMyFighter {...myFighter} />;
   } else {
-    fighter = <Fighter {...myFighter} />;
+    fighter = <Game />;
   }
 
   return (
     <div>
-    <h1>Fighters</h1>
-    {fighter}
-  </div>
+      <h1>Fighters</h1>
+      <hr />
+      {fighter}
+    </div>
   );
 }
 
