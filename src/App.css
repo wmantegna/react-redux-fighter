@@ -1,3 +1,9 @@
+body {
+  margin: 2em;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
   text-align: center;
 }

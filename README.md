@@ -9,7 +9,8 @@
 ## Articles (in order or reading)
 - [ReactJS Docs](https://reactjs.org/docs/installation.html)
 - [Redux Docs](http://redux.js.org/docs/basics/)
-- [Blog Post with Great explanation of how Redux works](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container)
+- [Blog: Great explanation of how Redux works](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container)
+- [Blog: Ajax requests in React](https://daveceddia.com/ajax-requests-in-react/)
 
 
 

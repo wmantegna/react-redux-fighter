@@ -1,29 +1,25 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Fighter from './Fighter'
 
-import { Fighter } from './fighter';
+const FighterList = ({ fighters, onFighterClick }) => (
+  <div>
+    <h2>Fighter List</h2>
+    {fighters.map(fighter => (
+      <Fighter key={fighter.id} {...fighter} onClick={() => onFighterClick(fighter.id)} />
+    ))}
+  </div>
+)
 
-export class FighterList extends React.Component {
-  nodes;
-
-  constructor(props) {
-    super(props);
-
-    this.nodes = props.fighters.map((fighter) => {
-      return <Fighter 
-        id={fighter.id}
-        name={fighter.name}
-        attack={fighter.attack}
-        defense={fighter.defense} 
-      />
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>FighterList</h1>
-        {this.nodes}
-      </div>
-    );
-  }
+FighterList.propTypes = {
+  fighters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      attack: PropTypes.number.isRequired,
+      defense: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired
 }
+
+export default FighterList
