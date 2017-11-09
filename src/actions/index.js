@@ -8,8 +8,10 @@ export const addFighter = text => {
 }
 
 export const updateMyFighter = (stat, value) => {
+  // type: 'UPDATE_MY_' + stat.toUpperCase(),
   return {
-    type: 'UPDATE_MY_' + stat.toUpperCase(),
-    value
+    type: 'UPDATE_MY_SKILLS',
+    stat: stat,
+    value: value
   }
 }
