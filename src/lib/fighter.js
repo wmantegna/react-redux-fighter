@@ -1,15 +1,26 @@
 import { calcRandomCeil } from './calculator';
 
+import Chance from 'chance';
+let chance = new Chance();
+
+
+
 let _nextFighterId = 1;
 
 export class Fighter {
   constructor(skillPoints = 10){
+    // auto-generate
     this.id = _nextFighterId++;
+
+    // params-based
+    this.skillPoints = skillPoints;
+
+    // assign default values
+    this.name = '';
     this.attack = 0;
     this.defense = 0;
     this.health = 10;
     this.healthLeft = 10;
-    this.skillPoints = skillPoints;
 
     return this; // enable chaining
   }
@@ -36,6 +47,7 @@ export class Fighter {
 
   static generateRandom(startingPoints){
     let obj = new Fighter(startingPoints);
+    obj.name = chance.first();
     
     obj.assignPointsRandomly();
     

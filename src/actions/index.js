@@ -1,9 +1,17 @@
 export const updateFighter = (id, stat, value) => {
   return {
-    type: 'UPDATE_FIGHTER',
+    type: 'UPDATE_FIGHTER_SKILL',
     id: id,
     stat: stat,
     value: value
+  }
+}
+
+export const updateFighterName = (id, name) => {
+  return {
+    type: 'UPDATE_FIGHTER_NAME',
+    id: id,
+    name: name
   }
 }
 

@@ -8,7 +8,14 @@ const defaultState = [
 
 const fighters = (state = defaultState, action) => {
   switch (action.type) {
-    case 'UPDATE_FIGHTER':
+    case 'UPDATE_FIGHTER_NAME':
+    console.log(action);
+      return state.map(fighter => 
+        (fighter.id === action.id) 
+        ? {...fighter, name: action.name}
+        : fighter
+      );
+    case 'UPDATE_FIGHTER_SKILL':
       return state.map(fighter => {
         if (fighter.id === action.id){
           let updates = {};
