@@ -2,8 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import Fighter from './Fighter';
+import TurnButtons from './TurnButtons';
+import TurnList from './TurnList';
 
-let Game = ({myFighter, computer}) => {
+let Game = ({fighter1, fighter2}) => {
   return (
     <div>
       <h2>Let the games begin!</h2>
@@ -14,36 +16,30 @@ let Game = ({myFighter, computer}) => {
             <td>Computer</td>
           </tr>
           <tr>
-            <td><Fighter {...myFighter} /></td>
-            <td><Fighter {...computer} /></td>
+            <td><Fighter {...fighter1} /></td>
+            <td><Fighter {...fighter2} /></td>
+          </tr>
+          <tr>
+            <td>
+              <TurnButtons fighter1={fighter1} fighter2={fighter2} />
+            </td>
           </tr>
         </tbody>
       </table>
+
+      <TurnList />
       
     </div>
   );
 }
 
 const mapStateToProps = state => {
-  // return {};
-  console.log(state);
   return {
-    myFighter: state.myFighter,
-    computer: state.game.computer
+    fighter1: state.fighters[0],
+    fighter2: state.fighters[1]
   }
 }
-const mapDispatchToProps = dispatch => {
-  return {};
-  // return {
-  //   onTodoClick: id => {
-  //     dispatch(toggleTodo(id))
-  //   }
-  // }
-}
 
-Game = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Game)
+Game = connect(mapStateToProps, null)(Game)
 
 export default Game

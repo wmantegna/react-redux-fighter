@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Fighter = ({ attack, defense, health }) => {
+const Fighter = ({ id, attack, defense, healthLeft }) => {
   return (
     <div>
-      <strong>Health: </strong> {health}<br />
+      <strong>Fighter {id}</strong><br />
+      <strong>Health: </strong> {healthLeft}<br />
       <strong>Attack: </strong> {attack}<br />
       <strong>Defense: </strong> {defense}
     </div>

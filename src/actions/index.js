@@ -1,16 +1,17 @@
-let nextFighterId = 0
-export const addFighter = text => {
+export const updateFighter = (id, stat, value) => {
   return {
-    type: 'ADD_FIGHTER',
-    id: nextFighterId++,
-    text
+    type: 'UPDATE_FIGHTER',
+    id: id,
+    stat: stat,
+    value: value
   }
 }
 
-export const updateMyFighter = (stat, value) => {
+export const takeTurn = (action, fighter1, fighter2) => {
   return {
-    type: 'UPDATE_MY_SKILLS',
-    stat: stat,
-    value: value
+    type: 'ADD_TURN',
+    fighter1: fighter1,
+    fighter1Action: action,
+    fighter2: fighter2
   }
 }

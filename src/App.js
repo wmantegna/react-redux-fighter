@@ -3,19 +3,15 @@ import { connect } from 'react-redux';
 
 import './App.css'
 
-import EditMyFighter from './components/EditMyFighter';
+import EditFighter from './components/EditFighter';
 import Game from './components/Game';
 
-const mapStateToProps = state => {
-  return {
-    myFighter: state.myFighter
-  }
-}
-
-let App = ({ myFighter }) => {
+let App = ({ fighters }) => {
   let fighter;
+  let myFighter = fighters[0];
+
   if (myFighter.skillPoints > 0){
-    fighter = <EditMyFighter {...myFighter} />;
+    fighter = <EditFighter {...myFighter} />;
   } else {
     fighter = <Game />;
   }
@@ -29,5 +25,12 @@ let App = ({ myFighter }) => {
   );
 }
 
-App = connect(mapStateToProps)(App);
+const mapStateToProps = state => {
+  return {
+    fighters: state.fighters
+  }
+}
+
+App = connect(mapStateToProps, null)(App);
+
 export default App;
