@@ -5,8 +5,6 @@ const defaultState = [];
 const turns = (state = defaultState, action) => {
   switch (action.type) {
     case 'ADD_TURN':
-      console.log('hello world')
-      console.log(action);
       let fighter2Action = Turn.calculateRandomAction();
       let newTurn = Turn.calculate(action.fighter1, action.action, action.fighter2, fighter2Action);
 

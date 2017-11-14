@@ -1,33 +1,38 @@
 let _nextTurnId = 1;
 
 export class Turn {
-  constructor(fighter1Action, fighter1Damage, fighter2Action, fighter2Damage){
+  constructor(fighter1Name, fighter1Action, fighter1Damage, fighter2Name, fighter2Action, fighter2Damage){
     this.id = _nextTurnId++;
     this.fighter1 = {
+      name: fighter1Name,
       action: fighter1Action,
       damage: fighter1Damage
     };
     this.fighter2 = {
+      name: fighter2Name,
       action: fighter2Action,
       damage: fighter2Damage
     };
 
-    this.description = this.buildDescription();
+    this.description = this.generateDescription();
   }
 
-  buildDescription(){
+  generateDescription(){
     let fighter1Attacks = this.fighter1.action === 'ATTACK';
     let fighter2Attacks = this.fighter2.action === 'ATTACK';
     let str = '';
 
+    let name1 = this.fighter1.name;
+    let name2 = this.fighter2.name;
+
     if (fighter1Attacks && fighter2Attacks) {
-      str = 'both fighters are hit with each others attacks';
+      str = 'Both fighters are hit with each others attacks!';
     } else if (fighter1Attacks) {
-      str = 'fighter1 is hit with their own attack';
+      str = name2 + ' reflects ' + name1 + '\'s attack!';
     } else if (fighter2Attacks) {
-      str = 'fighter2 is hit with their own attack';
+      str = name1 + ' reflects ' + name2 + '\'s attack!';
     } else {
-      str = 'both fighters reflect, meaning they\'re hit with the average of their attacks';
+      str = 'Both fights reflect! Nothing happens.';
     }
 
     return str;
@@ -60,7 +65,13 @@ export class Turn {
       fighter2Damage = fighter2Attack;
     }
   
-    return new Turn(fighter1Action, fighter1Damage, fighter2Action, fighter2Damage);
+    return new Turn(
+      fighter1.name,
+      fighter1Action, 
+      fighter1Damage, 
+      fighter2.name,
+      fighter2Action, 
+      fighter2Damage);
   }
   
   static calculateRandomAction(){

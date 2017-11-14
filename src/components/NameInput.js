@@ -14,7 +14,7 @@ let NameInput = ({ dispatch, id }) => {
       <strong>Name: </strong>
       <input 
         ref={node => { input = node }} 
-        value={name}
+        defaultValue={name}
         onBlur={() => { dispatch(updateFighterName(id, input.value)) }}
       />
     </div>
