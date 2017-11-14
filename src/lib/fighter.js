@@ -17,8 +17,8 @@ export class Fighter {
 
     // assign default values
     this.name = '';
-    this.attack = 0;
-    this.defense = 0;
+    this.attack = 5;
+    this.defense = 5;
     this.health = 10;
     this.healthLeft = 10;
 
@@ -30,16 +30,17 @@ export class Fighter {
   }
 
   assignPointsRandomly(){
-    this.attack = calcRandomCeil(this.skillPoints);
-    this.skillPoints -= this.attack;
+    let pointsToAdd = calcRandomCeil(this.skillPoints);
+    this.attack += pointsToAdd;
+    this.skillPoints -= pointsToAdd;
 
-    this.defense = calcRandomCeil(this.skillPoints);
-    this.skillPoints -= this.defense;
+    pointsToAdd = calcRandomCeil(this.skillPoints);
+    this.defense += pointsToAdd;
+    this.skillPoints -= pointsToAdd;
 
     // NOTE: health is restored when applying skillPoints
-    this.health = 10 + this.skillPoints;
-    this.healthLeft = 10 + this.skillPoints;
-    
+    this.health += this.skillPoints;
+    this.healthLeft += this.skillPoints;
     this.skillPoints = 0;
 
     return this; // enable chaining

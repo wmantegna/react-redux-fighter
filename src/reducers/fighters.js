@@ -21,6 +21,11 @@ const fighters = (state = defaultState, action) => {
           
           updates['skillPoints'] = fighter.skillPoints - 1;
           updates[action.stat] = fighter[action.stat] + action.value;
+          
+          // special case for health & health left (healthLeft is replenished when health is leveled)
+          if (action.stat === 'health'){
+            updates['healthLeft'] = updates['health'];
+          }
 
           return Object.assign(new Fighter(), fighter, updates);
         } else {
