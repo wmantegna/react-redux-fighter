@@ -32,7 +32,7 @@ export class Turn {
     } else if (fighter2Attacks) {
       str = name1 + ' reflects ' + name2 + '\'s attack!';
     } else {
-      str = 'Both fights reflect! Nothing happens.';
+      str = 'Both fighters reflect! Nothing happens.';
     }
 
     return str;
