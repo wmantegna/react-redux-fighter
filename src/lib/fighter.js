@@ -4,7 +4,6 @@ import Chance from 'chance';
 let chance = new Chance();
 
 
-
 let _nextFighterId = 1;
 
 export class Fighter {

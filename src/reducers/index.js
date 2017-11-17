@@ -2,9 +2,9 @@ import { combineReducers } from 'redux'
 import fighters from './fighters'
 import turns from './turns'
 
-const fighterApp = combineReducers({
+const rootReducer = combineReducers({
   fighters,
   turns
 })
 
-export default fighterApp
+export default rootReducer

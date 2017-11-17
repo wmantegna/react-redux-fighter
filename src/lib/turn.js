@@ -1,15 +1,17 @@
 let _nextTurnId = 1;
 
 export class Turn {
-  constructor(fighter1Name, fighter1Action, fighter1Damage, fighter2Name, fighter2Action, fighter2Damage){
+  constructor(fighter1, fighter1Action, fighter1Damage, fighter2, fighter2Action, fighter2Damage){
     this.id = _nextTurnId++;
     this.fighter1 = {
-      name: fighter1Name,
+      id: fighter1.id,
+      name: fighter1.name,
       action: fighter1Action,
       damage: fighter1Damage
     };
     this.fighter2 = {
-      name: fighter2Name,
+      id: fighter2.id,
+      name: fighter2.name,
       action: fighter2Action,
       damage: fighter2Damage
     };
@@ -66,10 +68,10 @@ export class Turn {
     }
   
     return new Turn(
-      fighter1.name,
+      fighter1,
       fighter1Action, 
       fighter1Damage, 
-      fighter2.name,
+      fighter2,
       fighter2Action, 
       fighter2Damage);
   }

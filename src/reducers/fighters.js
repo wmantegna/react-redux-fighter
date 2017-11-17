@@ -32,6 +32,17 @@ const fighters = (state = defaultState, action) => {
           return fighter;
         }
       });
+    case 'UPDATE_FIGHTER_FROM_TURN':
+      return state.map(fighter => {
+        if (fighter.id === action.id) {
+          let newHealth = (fighter.healthLeft - action.damage);
+          let updates = { healthLeft: newHealth };
+
+          return Object.assign(new Fighter(), fighter, updates);
+        } else {
+          return fighter;
+        }
+      });
     default:
       return state
   }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const generateSubList = (fighter) => {
   if (fighter.damage > 0){
-    return  <li><strong>{fighter.name}</strong> takes <strong>{fighter.damage}</strong> damage!</li>;
+    return <li><strong>{fighter.name}</strong> takes <strong>{fighter.damage}</strong> damage!</li>;
   } else {
     return undefined;
   }
