@@ -32,6 +32,7 @@ export const takeTurn = (action, fighter1, fighter2) => {
   }
 }
 
+// thunk!
 export const takeTurnAndUpdateFighters = (action, fighter1, fighter2) => {
   return (dispatch, getState) => {
     // calculate turn results
