@@ -8,7 +8,7 @@ const generateSubList = (fighter) => {
   }
 }
 
-const Todo = ({ description, fighter1, fighter2 }) => {
+const Turn = ({ description, fighter1, fighter2 }) => {
   let subList = undefined;
   let fighter1Damage = generateSubList(fighter1);
   let fighter2Damage = generateSubList(fighter2);
@@ -29,4 +29,4 @@ const Todo = ({ description, fighter1, fighter2 }) => {
   );
 }
 
-export default Todo
+export default Turn
