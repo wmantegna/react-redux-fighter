@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import Fighter from './Fighter';
-import TurnButtons from './TurnButtons';
-import TurnList from './TurnList';
+import Fighter from './fighter';
+import TurnButtons from './turnButtons';
+import TurnList from './turnList';
 
 let Game = ({fighter1, fighter2}) => {
   return (

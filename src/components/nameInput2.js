@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateFighterName } from '../actions'
 import Chance from 'chance';
+
 let chance = new Chance();
 
 let NameInput = ({ dispatch, id }) => {

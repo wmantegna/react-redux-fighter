@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import Turn from './Turn'
+import Turn from './turn'
 
 let TurnList = ({ turns }) => {
   let history = <span>No turns have been taken yet!</span>;
