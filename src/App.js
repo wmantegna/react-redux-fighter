@@ -11,7 +11,7 @@ let App = ({ fighters }) => {
   let myFighter = fighters[0];
 
   if (myFighter.skillPoints > 0){
-    fighter = <EditFighter {...myFighter} />;
+    fighter = <EditFighter fighter={myFighter} />;
   } else {
     fighter = <Game />;
   }
