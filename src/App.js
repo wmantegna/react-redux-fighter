@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import './App.css'
 
-import EditFighter from './components/EditFighter';
-import Game from './components/Game';
+import EditFighter from './components/editFighter';
+import Game from './components/game';
 
 let App = ({ fighters }) => {
   let fighter;

@@ -49,3 +49,16 @@ Thunk:
 JS:
 
 - [Github Gist -- New ES6 Constructor Semantics and Usage Examples](https://gist.github.com/allenwb/53927e46b31564168a1d)
+
+Composing Software Series on Medium
+- [Part 1: The Rise and Fall and Rise of Functional Programming](https://medium.com/javascript-scene/the-rise-and-fall-and-rise-of-functional-programming-composable-software-c2d91b424c8c)
+- [Part 2: Why Learn Functional Programming in JavaScript?](https://medium.com/javascript-scene/why-learn-functional-programming-in-javascript-composing-software-ea13afc7a257#.i6vf0q8uy)
+- [Part 3: A Functional Programmer’s Introduction to JavaScript](https://medium.com/javascript-scene/a-functional-programmers-introduction-to-javascript-composing-software-d670d14ede30#.zdpw16p65)
+- [Part 4: Higher Order Functions](https://medium.com/javascript-scene/higher-order-functions-composing-software-5365cf2cbe99#.egoxjg6x7)
+- [Part 5: Reduce](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d)
+- [Part 6: Functors & Categories](https://medium.com/javascript-scene/functors-categories-61e031bac53f#.4hqndcx22)
+- [Part 7: Functional Mixins](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c)
+- [Part 8: JavaScript Factory Functions with ES6+](https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1)
+- [Part 9: Why Composition is Harder with Classes](https://medium.com/javascript-scene/why-composition-is-harder-with-classes-c3e627dcd0aa)
+- [Part 10: Composable Datatypes with Functions](https://medium.com/javascript-scene/composable-datatypes-with-functions-aec72db3b093)
+- [Part 11: JavaScript Monads Made Simple](https://medium.com/javascript-scene/javascript-monads-made-simple-7856be57bfe8)

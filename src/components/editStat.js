@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { updateFighter } from '../actions'
+import { updateFighter } from '../actions';
 
 let EditStat = ({ dispatch, id, stat, value }) => {
   let statName = stat.charAt(0).toUpperCase() + stat.slice(1);
@@ -19,5 +18,4 @@ let EditStat = ({ dispatch, id, stat, value }) => {
 }
 
 EditStat = connect()(EditStat);
-
-export default EditStat
+export default EditStat;
